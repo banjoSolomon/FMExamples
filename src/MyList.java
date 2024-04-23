@@ -75,5 +75,13 @@ public class MyList {
         }
         return (numbers.length * (numbers.length + 1)) / 2 - sum;
     }
+
+    public int toFIndThePickElement(int[] numbers) {
+        int sum = 0;
+        for (int count = 0; count < numbers.length; count++) {
+            sum += numbers[count];
+        }
+        return sum / numbers.length;
+    }
 }
 

@@ -36,6 +36,12 @@ public class MutestCheck {
         int[] numbers = {9,6,4,2,3,5,7,0,1};
         assertEquals(8,lists.toFIndTheMissingNumber(numbers));
     }
+    @Test
+    public void testToFIndThePickElement(){
+        MyList lists = new MyList();
+        int[] numbers = {9,6,4,2,3,5,7,0,1};
+        assertEquals(4,lists.toFIndThePickElement(numbers));
+    }
 
 }
 
