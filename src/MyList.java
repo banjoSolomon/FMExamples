@@ -28,8 +28,8 @@ public class MyList {
     public boolean allLettersContainsAlphabet(String words) {
         boolean[] letterPresent = new boolean[26];
         String lowercaseWords = words.toLowerCase();
-        for (int i = 0; i < lowercaseWords.length(); i++) {
-            char ch = lowercaseWords.charAt(i);
+        for (int count = 0; count < lowercaseWords.length(); count++) {
+            char ch = lowercaseWords.charAt(count);
             if (ch >= 'a' && ch <= 'z') {
                 letterPresent[ch - 'a'] = true;
             }
@@ -41,5 +41,19 @@ public class MyList {
         }
         return true;
     }
+
+    public int[] sortingNumbersInAnArray(int[] numbers) {
+        for (int count = 0; count < numbers.length - 1; count++) {
+            for (int index = count + 1; index < numbers.length; index++) {
+                if (numbers[count] > numbers[index]) {
+                    int temp = numbers[count];
+                    numbers[count] = numbers[index];
+                    numbers[index] = temp;
+                }
+            }
+        }
+        return numbers;
+    }
+
 }
 
