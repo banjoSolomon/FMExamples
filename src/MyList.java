@@ -24,5 +24,22 @@ public class MyList {
         }
         return reversedWordsBuilder.toString();
     }
+
+    public boolean allLettersContainsAlphabet(String words) {
+        boolean[] letterPresent = new boolean[26];
+        String lowercaseWords = words.toLowerCase();
+        for (int i = 0; i < lowercaseWords.length(); i++) {
+            char ch = lowercaseWords.charAt(i);
+            if (ch >= 'a' && ch <= 'z') {
+                letterPresent[ch - 'a'] = true;
+            }
+        }
+        for (boolean present : letterPresent) {
+            if (!present) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
