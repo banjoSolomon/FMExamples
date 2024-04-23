@@ -30,6 +30,12 @@ public class MutestCheck {
         int[] height = {1,8,6,2,5,4,8,3,7};
         assertEquals(49,lists.containerWithMostWater(height));
     }
+    @Test
+    public void testToFIndTheMissingNumber(){
+        MyList lists = new MyList();
+        int[] numbers = {9,6,4,2,3,5,7,0,1};
+        assertEquals(8,lists.toFIndTheMissingNumber(numbers));
+    }
 
 }
 

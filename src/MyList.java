@@ -67,5 +67,13 @@ public class MyList {
         }
         return maxArea;
     }
+
+    public int toFIndTheMissingNumber(int[] numbers) {
+        int sum = 0;
+        for (int count = 0; count < numbers.length; count++) {
+            sum += numbers[count];
+        }
+        return (numbers.length * (numbers.length + 1)) / 2 - sum;
+    }
 }
 
