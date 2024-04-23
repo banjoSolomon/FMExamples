@@ -24,5 +24,12 @@ public class MutestCheck {
         int[] newNumbers = {0, 1, 2, 3, 7, 8, 10};
         assertArrayEquals(newNumbers,lists.sortingNumbersInAnArray(numbers));
     }
+    @Test
+    public void testContainerWithMostWater(){
+        MyList lists = new MyList();
+        int[] height = {1,8,6,2,5,4,8,3,7};
+        assertEquals(49,lists.containerWithMostWater(height));
+    }
+
 }
 

@@ -55,5 +55,17 @@ public class MyList {
         return numbers;
     }
 
+    public int containerWithMostWater(int[] height) {
+        int maxArea = 0;
+        for (int count = 0; count < height.length - 1; count++) {
+            for (int index = count + 1; index < height.length; index++) {
+                int area = (index - count) * Math.min(height[count], height[index]);
+                if (area > maxArea) {
+                    maxArea = area;
+                }
+            }
+        }
+        return maxArea;
+    }
 }
 
