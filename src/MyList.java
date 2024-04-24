@@ -83,5 +83,24 @@ public class MyList {
         }
         return sum / numbers.length;
     }
+
+
+
+
+    public int[] plusOneToTheLastNumberInTheIndex(int[] numbers) {
+        int index = numbers.length - 1;
+        while (index >= 0) {
+            if (numbers[index] < 9) {
+                numbers[index]++;
+                return numbers;
+            } else {
+                numbers[index] = 0;
+                index--;
+            }
+        }
+        int[] newNumbers = new int[numbers.length + 1];
+        newNumbers[0] = 1;
+        return newNumbers;
+    }
 }
 

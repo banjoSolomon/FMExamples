@@ -42,6 +42,15 @@ public class MutestCheck {
         int[] numbers = {9,6,4,2,3,5,7,0,1};
         assertEquals(4,lists.toFIndThePickElement(numbers));
     }
+    @Test
+    public void testPlusOneToTheLastNumberInTheIndex(){
+        MyList lists = new MyList();
+        int[] numbers = {2,4,0,9,9};
+        int[] newNumbers = {2,4,1,0,0};
+        assertArrayEquals(newNumbers,lists.plusOneToTheLastNumberInTheIndex(numbers));
+
+    }
+
 
 }
 
