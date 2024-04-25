@@ -53,8 +53,24 @@ public class MutestCheck {
     @Test
     public void testToFindTheMostOccuredNumberInTheArray(){
         MyList lists = new MyList();
-        int[] numbers = {3,3,1,1,1};
-        assertEquals(1,lists.toFindTheMostOccuredNumberInTheArray(numbers));
+        int[] numbers = {1,1,3,3,3};
+        assertEquals(3,lists.toFindTheMostOccuredNumberInTheArray(numbers));
+    }
+    @Test
+    public void testToFindTheMaximumSubarraySum(){
+        MyList lists = new MyList();
+        int[] numbers = {-2,1,-3,4,-1,2,1,-5,4};
+        assertEquals(6,lists.toFindTheMaximumSubarraySum(numbers));
+
+    }
+
+    @Test
+    public void RotateArray(){
+        MyList lists = new MyList();
+        int[] numbers = {1,2,3,4,5,6,7};
+        int[] newNumbers = {5,6,7,1,2,3,4};
+        assertArrayEquals(newNumbers,lists.RotateArray(numbers,3));
+
     }
 
 

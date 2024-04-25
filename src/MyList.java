@@ -85,8 +85,6 @@ public class MyList {
     }
 
 
-
-
     public int[] plusOneToTheLastNumberInTheIndex(int[] numbers) {
         int index = numbers.length - 1;
         while (index >= 0) {
@@ -121,5 +119,26 @@ public class MyList {
         }
         return mostOccoured;
     }
-}
 
+    public int toFindTheMaximumSubarraySum(int[] numbers) {
+        int maxSum = 0;
+        for (int count = 0; count < numbers.length; count++) {
+            int currentSum = 0;
+            for (int index = count; index < numbers.length; index++) {
+                currentSum += numbers[index];
+                if (currentSum > maxSum) {
+                    maxSum = currentSum;
+                }
+            }
+        }
+        return maxSum;
+    }
+
+    public int[] RotateArray(int[] numbers, int i) {
+        int[] newNumbers = new int[numbers.length];
+        for (int count = 0; count < numbers.length; count++) {
+            newNumbers[(count + i) % numbers.length] = numbers[count];
+        }
+        return newNumbers;
+    }
+}
