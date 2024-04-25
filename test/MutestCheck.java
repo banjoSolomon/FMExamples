@@ -50,6 +50,12 @@ public class MutestCheck {
         assertArrayEquals(newNumbers,lists.plusOneToTheLastNumberInTheIndex(numbers));
 
     }
+    @Test
+    public void testToFindTheMostOccuredNumbeInTheArray(){
+        MyList lists = new MyList();
+        int[] numbers = {3,3,1,1,1};
+        assertEquals(1,lists.toFindTheMostOccuredNumbeInTheArray(numbers));
+    }
 
 
 }

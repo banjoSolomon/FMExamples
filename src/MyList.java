@@ -102,5 +102,24 @@ public class MyList {
         newNumbers[0] = 1;
         return newNumbers;
     }
+
+    public int toFindTheMostOccuredNumbeInTheArray(int[] numbers) {
+        int maxCount = 0;
+        int mostOccoured = 0;
+        for (int count = 0; count < numbers.length; count++) {
+            int currentCount = 0;
+            for (int index = 0; index < numbers.length; index++) {
+                if (numbers[count] == numbers[index]) {
+                    currentCount++;
+                }
+
+            }
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+                mostOccoured = numbers[count];
+            }
+        }
+        return mostOccoured;
+    }
 }
 
