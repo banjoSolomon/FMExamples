@@ -103,7 +103,7 @@ public class MyList {
         return newNumbers;
     }
 
-    public int toFindTheMostOccuredNumbeInTheArray(int[] numbers) {
+    public int toFindTheMostOccuredNumberInTheArray(int[] numbers) {
         int maxCount = 0;
         int mostOccoured = 0;
         for (int count = 0; count < numbers.length; count++) {

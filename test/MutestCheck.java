@@ -51,10 +51,10 @@ public class MutestCheck {
 
     }
     @Test
-    public void testToFindTheMostOccuredNumbeInTheArray(){
+    public void testToFindTheMostOccuredNumberInTheArray(){
         MyList lists = new MyList();
         int[] numbers = {3,3,1,1,1};
-        assertEquals(1,lists.toFindTheMostOccuredNumbeInTheArray(numbers));
+        assertEquals(1,lists.toFindTheMostOccuredNumberInTheArray(numbers));
     }
 
 
