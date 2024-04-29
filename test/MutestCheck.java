@@ -73,6 +73,17 @@ public class MutestCheck {
 
     }
 
+    @Test
+    public void testToPlusTwoNumbersWithoutPlusMethod(){
+        MyList lists = new MyList();
+        int numbers = 4;
+        int numbers2 = 2;
+        assertEquals(6,lists.toPlusTwoNumbersWithoutPlusMethod(numbers,numbers2));
+
+
+    }
+
+
 
 }
 

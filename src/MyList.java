@@ -141,4 +141,11 @@ public class MyList {
         }
         return newNumbers;
     }
+
+
+    public int toPlusTwoNumbersWithoutPlusMethod(int numbers, int numbers2) {
+        return numbers2-(-numbers);
+
+
+    }
 }
