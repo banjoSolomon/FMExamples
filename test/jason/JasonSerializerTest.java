@@ -17,7 +17,7 @@ public class JasonSerializerTest {
        person.setPhoneNumber("08064556912");
 
        String json = JsonSerializer.serialize(person);
-       String expected = "{\"name\":\"Bob\",\"dateOfBirth\":\"2024-03-03\",\"gender\":\"SHIM\",\"phoneNumber\":\"08023578906\"}";
+       String expected = "{\"name\":\"Jason\",\"dateOfBirth\":\"2024-03-03\",\"phoneNumber\":\"08064556912\",\"gender\":\"MALE\"}";
         assertEquals(expected, json);
 
     }
