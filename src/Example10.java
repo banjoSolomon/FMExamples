@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class Example10 {
     public static void main(String[] args)  {
-        String location = "C:\\Users\\DELL\\Desktop\\Eexesise";
+        String location = "C:\\Users\\DELL\\Desktop\\Eexesise,sample3.txt";
         Path path = Paths.get(location);
         try{
         BufferedWriter writer = Files.newBufferedWriter(path);
