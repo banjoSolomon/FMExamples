@@ -1,5 +1,6 @@
 package jason;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Test;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,7 @@ import java.util.logging.Logger;
 import static jason.Gender.MALE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+//jar-download.com
 
 public class JasonSerializerTest {
     @Test
@@ -24,15 +26,15 @@ public class JasonSerializerTest {
         assertEquals(expected, json);
     }
     @Test
-    public void testDeserialize() {
-        Person person = new Person("John", "2024-02-10", "1999", MALE);
-        String  json = "{\"name\":\"Jason\",\"dateOfBirth\":\"2024-03-03\",\"phoneNumber\":\"08064556912\",\"gender\":\"MALE\"}";
+    public void testDeserialize() throws JsonProcessingException {
+        Person person = new Person("John", "2024-02-10", "08164556912", MALE);
+        String  json = JsonSerializer.serialize(person);
         Person personFromJeson = JsonSerializer.deserialize(json);
         assertNotNull(personFromJeson);
         assertEquals(person.getDateOfBirth(), personFromJeson.getDateOfBirth());
         assertEquals(MALE, personFromJeson.getGender());
         assertEquals("John", personFromJeson.getName());
-        assertEquals("08064556912", personFromJeson.getPhoneNumber());
+        assertEquals("08164556912", personFromJeson.getPhoneNumber());
     }
 
 

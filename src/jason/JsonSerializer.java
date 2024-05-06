@@ -18,8 +18,8 @@ public class JsonSerializer {
 
     }
 
-    public static Person deserialize(String json) {
+    public static Person deserialize(String json) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.convertValue(json, Person.class);
+        return mapper.readValue(json, Person.class);
     }
 }
