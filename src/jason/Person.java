@@ -2,6 +2,10 @@ package jason;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -10,6 +14,8 @@ import java.time.LocalDateTime;
 public class Person {
     private String name;
     @JsonProperty("Jason")
+    @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dateOfBirth;
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private String phoneNumber;

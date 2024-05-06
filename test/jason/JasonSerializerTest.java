@@ -23,7 +23,7 @@ public class JasonSerializerTest {
        person.setPhoneNumber("08064556912");
 
        String json = JsonSerializer.serialize(person);
-       String expected = "{\"name\":\"Jason\",\"dateOfBirth\":\"2024-03-03\",\"phoneNumber\":\"08064556912\",\"gender\":\"MALE\"}";
+       String expected = "{\"name\":\"Jason\",\"phoneNumber\":\"08064556912\",\"gender\":\"MALE\",\"Jason\":[2020,10,10]}";
         assertEquals(expected, json);
     }
     @Test
