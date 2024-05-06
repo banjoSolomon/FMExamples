@@ -1,9 +1,19 @@
 package jason;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Person {
     private String name;
-    private String dateOfBirth;
+    @JsonProperty("Jason")
+    private LocalDate dateOfBirth;
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private String phoneNumber;
+    @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private Gender gender;
 
     public  Person(){}
@@ -12,7 +22,7 @@ public class Person {
         return "person->{name: " + name + ", dateOfBirth: " + dateOfBirth + ", gender: " + gender + "phoneNumber: " + phoneNumber + "}";
     }
 
-    public Person(String name, String dateOfBirth, String phoneNumber, Gender gender) {
+    public Person(String name, LocalDate dateOfBirth, String phoneNumber, Gender gender) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
@@ -28,11 +38,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

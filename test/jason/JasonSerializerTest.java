@@ -3,6 +3,7 @@ package jason;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.logging.Logger;
 
@@ -16,8 +17,8 @@ public class JasonSerializerTest {
     public void testSerialize() {
        Person person = new Person();
        person.setName("Jason");
-       String setDateOfBirth = "2024-03-03";
-        person.setDateOfBirth(setDateOfBirth);
+       LocalDate dateOfBirth = LocalDate.of(2020, 10,10);
+       person.setDateOfBirth(dateOfBirth);
        person.setGender(MALE);
        person.setPhoneNumber("08064556912");
 
@@ -27,9 +28,11 @@ public class JasonSerializerTest {
     }
     @Test
     public void testDeserialize() throws JsonProcessingException {
-        Person person = new Person("John", "2024-02-10", "08164556912", MALE);
+        Person person = new Person("John", LocalDate.now(), "08164556912", MALE);
         String  json = JsonSerializer.serialize(person);
         Person personFromJeson = JsonSerializer.deserialize(json);
+        System.out.println("personFrom Json: " + personFromJeson);
+
         assertNotNull(personFromJeson);
         assertEquals(person.getDateOfBirth(), personFromJeson.getDateOfBirth());
         assertEquals(MALE, personFromJeson.getGender());
