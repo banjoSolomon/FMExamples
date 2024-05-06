@@ -7,8 +7,16 @@ public class Person {
     private Gender gender;
 
     public  Person(){}
+
     public String toString(){
         return "person->{name: " + name + ", dateOfBirth: " + dateOfBirth + ", gender: " + gender + "phoneNumber: " + phoneNumber + "}";
+    }
+
+    public Person(String name, String dateOfBirth, String phoneNumber, Gender gender) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
     }
 
 
