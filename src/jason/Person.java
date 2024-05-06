@@ -6,6 +6,11 @@ public class Person {
     private String phoneNumber;
     private Gender gender;
 
+    public  Person(){}
+    public String toString(){
+        return "person->{name: " + name + ", dateOfBirth: " + dateOfBirth + ", gender: " + gender + "phoneNumber: " + phoneNumber + "}";
+    }
+
 
     public String getName() {
         return name;
