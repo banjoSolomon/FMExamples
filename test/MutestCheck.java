@@ -80,7 +80,13 @@ public class MutestCheck {
         int numbers2 = 2;
         assertEquals(6,lists.toPlusTwoNumbersWithoutPlusMethod(numbers,numbers2));
 
+    }
 
+    @Test
+    public void testStringPalindrum(){
+        MyList lists = new MyList();
+        String words = "madam";
+        assertTrue(lists.stringPalindrum(words));
     }
 
 

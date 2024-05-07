@@ -148,4 +148,12 @@ public class MyList {
 
 
     }
+
+    public boolean stringPalindrum(String words) {
+        StringBuilder reversedWordsBuilder = new StringBuilder();
+        for (int count = words.length() - 1; count >= 0; count--) {
+            reversedWordsBuilder.append(words.charAt(count));
+        }
+        return words.equals(reversedWordsBuilder.toString());
+    }
 }
