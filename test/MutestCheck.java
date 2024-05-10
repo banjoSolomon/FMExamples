@@ -89,13 +89,17 @@ public class MutestCheck {
 
     }
 
-    @Test
-    public void testTotalMostOccurredNumbers(){
-        MyList list = new MyList();
-        int [] numbers = {1,2,2,1,3};
-      //  int result = 1:2
+ @Test
+ public void testForAbsoluteValue(){
+        MyList lists = new MyList();
+     int[] array = {1, 3, 5, 4, 8, 2, 4, 3, 6, 5 };
+     int x= 3;
+     int y= 2;
+     int expected = 2;
+     assertEquals(expected, lists.absoluteValue(array, x, y));
 
-    }
+
+ }
 
 
     @Test

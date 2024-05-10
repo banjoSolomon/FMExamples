@@ -10,6 +10,7 @@ public class Collections {
 
         Collection<String> words = new TreeSet<>();
         words.add("hello");
+        System.out.println(words);
         List<Integer> numbers = new ArrayList<>();
         numbers.add(4);
         numbers.add(3);
