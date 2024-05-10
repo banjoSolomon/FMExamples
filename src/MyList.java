@@ -1,3 +1,5 @@
+import javax.annotation.processing.SupportedAnnotationTypes;
+
 public class MyList {
     public String wordsToBeReversed(String words) {
         StringBuilder reversedWordsBuilder = new StringBuilder();
@@ -144,7 +146,7 @@ public class MyList {
 
 
     public int toPlusTwoNumbersWithoutPlusMethod(int numbers, int numbers2) {
-        return numbers2-(-numbers);
+        return numbers2 - (-numbers);
 
 
     }
@@ -156,4 +158,27 @@ public class MyList {
         }
         return words.equals(reversedWordsBuilder.toString());
     }
+
+    public int mostOccurredNumber(int[] numbers) {
+        int maxCount = 0;
+        int mostOccoured = 0;
+        for (int number : numbers) {
+            int currentCount = 0;
+            for (int i : numbers) {
+                if (number == i) {
+                    currentCount++;
+                }
+
+            }
+            if (currentCount > maxCount) {
+                maxCount = currentCount;
+                mostOccoured = number;
+            }
+        }
+        return mostOccoured;
+    }
 }
+
+
+
+
