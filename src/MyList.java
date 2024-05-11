@@ -179,13 +179,13 @@ public class MyList {
     }
 
     public int absoluteValue(int[] array, int x, int y) {
-        String s = "";
+        StringBuilder value = new StringBuilder();
         for (int num : array) {
-            s += num;
+            value.append(num);
         }
 
-        int indexX = s.lastIndexOf(String.valueOf(x));
-        int indexY = s.lastIndexOf(String.valueOf(y));
+        int indexX = value.lastIndexOf(String.valueOf(x));
+        int indexY = value.lastIndexOf(String.valueOf(y));
 
         int diff = indexX - indexY;
          return diff < 0 ? diff * -1 :diff;
