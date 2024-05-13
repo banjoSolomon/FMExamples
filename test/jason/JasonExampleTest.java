@@ -1,6 +1,9 @@
 package jason;
 import org.junit.Test;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import static org.junit.Assert.assertEquals;
 
 public class JasonExampleTest {
@@ -13,16 +16,19 @@ public class JasonExampleTest {
 
     }
     @Test
-    public void testToCheckNumberOfDigit(){
-       String input = "\"C:\\Users\\DELL\\Documents\\solo\\Welcome10.java\"";
-       int numberOfDigit = 2;
-       assertEquals(numberOfDigit, JasonExample.toCheckNumberOfDigit(input));
+    public void testToCheckNumberOfDigit() throws IOException {
+       String input = "C:\\Users\\DELL\\IdeaProjects\\OOP\\src\\sample2.txt";
+       String fileContent = new String(Files.readAllBytes(Paths.get(input)));
+       int numberOfDigit = 7;
+       assertEquals(numberOfDigit, JasonExample.toCheckNumberOfDigit(fileContent));
     }
 
     @Test
-    public void testToCountNumberOfSentences(){
-        String input = "C:\\Users\\DELL\\Documents\\solo\\Welcome10.java";
+    public void testToCountNumberOfSentences() throws IOException {
+        String filePath = "C:\\Users\\DELL\\IdeaProjects\\OOP\\src\\sample1.txt";
+        String fileContent = new String(Files.readAllBytes(Paths.get(filePath)));
         int numberOfSentences = 3;
-        assertEquals(numberOfSentences, JasonExample.toCountNumberOfSentences(input));
+        assertEquals(numberOfSentences, JasonExample.toCountNumberOfSentences(fileContent));
     }
-}
+    }
+
