@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "amount": 2000.00,
+    "type": "DEBIT",
+    "date": "2024-05-01"
+  },
+
+  {
+    "id": 2,
+    "name": "Jane Kpras",
+    "amount": 3000.00,
+    "type": "CREDIT",
+    "date": "2024-05-01"
+  },
+
+  {
+    "id": 3,
+    "name": "Pirate Dorf",
+    "amount": 1000.00,
+    "type": "DEBIT",
+    "date": "2024-05-01"
+  },
+
+  {
+    "id": 4,
+    "name": "Johny Mars",
+    "amount": 5000.00,
+    "type": "DEBIT",
+    "date": "2024-05-01"
+  }
+
+
+]
+
