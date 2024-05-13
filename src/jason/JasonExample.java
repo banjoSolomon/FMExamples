@@ -25,6 +25,26 @@ public class JasonExample {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(jason, Transaction[].class);
     }
+
+    public static int toCheckNumberOfDigit(String input) {
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (Character.isDigit(input.charAt(i))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int toCountNumberOfSentences(String input) {
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == '.') {
+                count++;
+            }
+        }
+        return count;
+    }
 }
 
 

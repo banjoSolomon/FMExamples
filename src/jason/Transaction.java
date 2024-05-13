@@ -11,7 +11,6 @@ import java.time.LocalDate;
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Transaction {
     private String name;
-//    @JsonProperty("Jason")
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate date;
