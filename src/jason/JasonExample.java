@@ -28,9 +28,9 @@ public class JasonExample {
 
     public static int toCheckNumberOfDigit(String input) {
         int count = 0;
-        for (int i = 0; i < input.length(); i++) {
-            if (Character.isDigit(input.charAt(i))) {
-                count++;
+        for (int index = 0; index < input.length(); index++) {
+            if (Character.isDigit(input.charAt(index))) {
+                index++;
             }
         }
         return count;
@@ -38,8 +38,19 @@ public class JasonExample {
 
     public static int toCountNumberOfSentences(String input) {
         int count = 0;
-        for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) == '.') {
+        for (int index = 0; index < input.length(); index++) {
+            if (input.charAt(index) == '.') {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    public static int toCountNumbersOfZeros(String fileContent) {
+        int count = 0;
+        for (int index = 0; index < fileContent.length(); index++) {
+            if (fileContent.charAt(index) == '0') {
                 count++;
             }
         }
