@@ -20,7 +20,7 @@ public class JasonExampleTest {
     public void testToCheckNumberOfDigit() throws IOException {
         String input = "C:\\Users\\DELL\\IdeaProjects\\OOP\\src\\sample2.txt";
         String fileContent = new String(Files.readAllBytes(Paths.get(input)));
-        int numberOfDigit = 7;
+        int numberOfDigit = 8;
         assertEquals(numberOfDigit, JasonExample.toCheckNumberOfDigit(fileContent));
     }
 
