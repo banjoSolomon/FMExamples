@@ -10,7 +10,7 @@ public class StreamExample {
         Stream<Integer> stream = numbers.stream();
         stream.forEach(System.out::println);
 
-        Stream<String> emptyStream = Stream.empty();
+      //  Stream<String> emptyStream = Stream.empty();
         Stream<Transaction> transactionStream = Stream.of(new Transaction("$100", "12345"), new Transaction("$3000", "123457"));
         transactionStream.forEach(System.out::println);
 
