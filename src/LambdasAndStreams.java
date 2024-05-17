@@ -8,6 +8,7 @@ import java.util.TreeSet;
 public class LambdasAndStreams {
     //functional interface
     //comparable interface
+    //comparator interface
     public static void main(String[] args) {
         Comparator<Person> comparator = (previousPerson, nextPerson)->{
             return nextPerson.getName().compareTo(previousPerson.getName());
