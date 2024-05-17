@@ -17,8 +17,14 @@ public class Transaction {
     private String id;
     private int amount;
     private Type type;
+    private String accountNumber;
 
+    public Transaction(){}
 
+    public Transaction(String amount, String accountNumber) {
+        this.amount = Integer.parseInt(amount);
+        this.accountNumber = accountNumber;
+    }
 
 
     public String toString(){
