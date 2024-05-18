@@ -197,7 +197,7 @@ public class MyList {
     }
 
     public int[] toReverseArrayWithStream(int[] numbers) {
-        return IntStream.rangeClosed(1, numbers.length).map(i -> numbers[numbers.length - i]).toArray();
+        return IntStream.rangeClosed(1, numbers.length).map(count -> numbers[numbers.length - count]).toArray();
     }
 
 
