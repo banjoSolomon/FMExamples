@@ -1,4 +1,7 @@
 import javax.annotation.processing.SupportedAnnotationTypes;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class MyList {
     public String wordsToBeReversed(String words) {
@@ -192,6 +195,12 @@ public class MyList {
 
 
     }
+
+    public int[] toReverseArrayWithStream(int[] numbers) {
+        return IntStream.rangeClosed(1, numbers.length).map(i -> numbers[numbers.length - i]).toArray();
+    }
+
+
 }
 
 

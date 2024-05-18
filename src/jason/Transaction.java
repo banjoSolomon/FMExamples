@@ -15,7 +15,7 @@ public class Transaction {
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate date;
     private String id;
-    private int amount;
+    private int  amount;
     private Type type;
     private String accountNumber;
 

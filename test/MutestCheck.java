@@ -12,6 +12,14 @@ public class MutestCheck {
     }
 
     @Test
+    public void testToReverseArrayWithStream() {
+        MyList lists = new MyList();
+        int[] numbers = {1, 2, 3, 4, 5};
+        int[] newNumbers = {5, 4, 3, 2, 1};
+        assertArrayEquals(newNumbers, lists.toReverseArrayWithStream(numbers));
+    }
+
+    @Test
     public void testAllLettersContainsAlphabet() {
         MyList lists = new MyList();
         String words = "the quick brown fox jumps over the lazy dog";
