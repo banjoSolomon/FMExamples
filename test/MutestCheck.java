@@ -141,7 +141,7 @@ public class MutestCheck {
     @Test
     public void testMapCodePointToCharacter(){
         MyList lists = new MyList();
-        List<Integer> codePoint = List.of(65, 97, 98, 66, 69, 48);
+        List<Integer> codePoint = List.of(65, 97, 66, 98, 66, 69, 48);
         Map<Integer, String> map = mapCodePointToCharacter(codePoint);
         Map<Integer, String> expected = Map.of(
                 65, "A",
@@ -159,8 +159,7 @@ public class MutestCheck {
 
     private Map<Integer, String> mapCodePointToCharacter(List<Integer> codePoint) {
         return codePoint.stream()
-               .collect(Collectors.toMap((codepoint)->codepoint, Character::toString));
-
+               .collect(Collectors.toMap((codepoint)->codepoint, Character::toString, (a,b)->b));
     }
 
     private List<Integer> getEvenNumbers(List<Integer> numbers) {
