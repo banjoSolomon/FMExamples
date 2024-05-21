@@ -1,5 +1,6 @@
 import javax.annotation.processing.SupportedAnnotationTypes;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -201,6 +202,11 @@ public class MyList {
     }
 
 
+    public String getNumberFormatted(List<Integer> numbers) {
+        return numbers.stream()
+                .map(number->number+ "")
+                .collect(Collectors.joining(", ", "[", "]"));
+    }
 }
 
 

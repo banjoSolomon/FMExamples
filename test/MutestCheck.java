@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -152,14 +153,29 @@ public class MutestCheck {
                 48, "0"
         );
         assertNotNull(map);
+        System.out.println(map);
         assertEquals(expected, map);
+
+
+    }
+
+    @Test
+    public void testNumbersFormatted(){
+        MyList lists = new MyList();
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        String result = lists.getNumberFormatted(numbers);
+        String expected = "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]";
+        assertNotNull(result);
+        assertTrue(result.startsWith(("[")));
+        assertTrue(result.endsWith(("]")));
+        assertEquals(expected, result);
 
 
     }
 
     private Map<Integer, String> mapCodePointToCharacter(List<Integer> codePoint) {
         return codePoint.stream()
-               .collect(Collectors.toMap((codepoint)->codepoint, Character::toString, (a,b)->b));
+               .collect(Collectors.toMap((codepoint)->codepoint, Character::toString, (a,b)->b, ()->new Hashtable<>()));
     }
 
     private List<Integer> getEvenNumbers(List<Integer> numbers) {
