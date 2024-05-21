@@ -2,6 +2,7 @@ package jason;
 import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.List;
@@ -28,6 +29,17 @@ public class JasonExampleTest {
         double expected = JasonExample.averageTransaction(LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 7));
        assertEquals(5000.0, expected, 0.0);
 
+    }
+
+    @Test
+    public void testToGetAccountNumberAndAccountSummery() throws IOException {
+        AccountSummery accountSummery = JasonExample.getAccountSummary("12345678", LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 7));
+        assertEquals("12345678", accountSummery.getAccountNumber());
+
+        double expectedBalance = 10000.0;
+        assertEquals(expectedBalance, accountSummery.getBalance(), 0.001);
+        String expectedSummary = "Account Number: 12345678\nBalance: " + expectedBalance;
+        assertEquals(expectedSummary, accountSummery.getAccountSummary());
     }
 
 

@@ -1,6 +1,7 @@
 package jason;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -93,6 +94,18 @@ public class JasonExample {
 
 
     }
-}
 
+    public static AccountSummery getAccountSummary(String accountNumber, LocalDate startDate, LocalDate endDate) throws IOException {
+        Path path = Paths.get("C:\\Users\\DELL\\IdeaProjects\\OOP\\src\\jason\\Transaction.json");
+        String fileContent = Files.readString(path);
+        ObjectMapper objectMapper = new ObjectMapper();
+        Transaction[] transactions = objectMapper.readValue(fileContent, Transaction[].class);
+        double balance = Arrays.stream(transactions)
+                .filter(transaction -> !transaction.getDate().isBefore(startDate) && !transaction.getDate().isAfter(endDate))
+                .mapToDouble(Transaction::getAmount)
+                .sum();
+
+        return new AccountSummery(accountNumber, balance);
+}
+}
 
