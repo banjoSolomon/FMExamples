@@ -1,5 +1,9 @@
 import org.junit.Test;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import static org.junit.Assert.*;
 
 public class MutestCheck {
@@ -14,8 +18,8 @@ public class MutestCheck {
     @Test
     public void testToReverseArrayWithStream() {
         MyList lists = new MyList();
-        int[] numbers = {1, 2, 3, 4, 5};
-        int[] newNumbers = {5, 4, 3, 2, 1};
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7};
+        int[] newNumbers = {7, 6, 5, 4, 3, 2, 1};
         assertArrayEquals(newNumbers, lists.toReverseArrayWithStream(numbers));
     }
 
@@ -123,5 +127,47 @@ public class MutestCheck {
         int[] numbers = {1, 1, 3, 3, 3};
         assertEquals(3, lists.mostOccurredNumber(numbers));
     }
+    @Test
+    public void testGetEvenNumbers(){
+        MyList lists = new MyList();
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> evenNumbers = getEvenNumbers(numbers);
+        assertNotNull(evenNumbers);
+        assertEquals(5, evenNumbers.size());
+
+
+    }
+
+    @Test
+    public void testMapCodePointToCharacter(){
+        MyList lists = new MyList();
+        List<Integer> codePoint = List.of(65, 97, 98, 66, 69, 48);
+        Map<Integer, String> map = mapCodePointToCharacter(codePoint);
+        Map<Integer, String> expected = Map.of(
+                65, "A",
+                97, "a",
+                98, "b",
+                66, "B",
+                69, "E",
+                48, "0"
+        );
+        assertNotNull(map);
+        assertEquals(expected, map);
+
+
+    }
+
+    private Map<Integer, String> mapCodePointToCharacter(List<Integer> codePoint) {
+        return codePoint.stream()
+               .collect(Collectors.toMap((codepoint)->codepoint, Character::toString));
+
+    }
+
+    private List<Integer> getEvenNumbers(List<Integer> numbers) {
+        return numbers.stream()
+               .filter(number -> number % 2 == 0)
+               .collect(Collectors.toList());//toSet, toCollection
+    }
+
 
 }
