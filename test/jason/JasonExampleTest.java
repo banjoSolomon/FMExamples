@@ -3,10 +3,34 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class JasonExampleTest {
+
+
+    @Test
+    public void testTransactionTakesDateAndReturnAllTransactionsForThatDay() throws IOException {
+        List<Transaction> expected = JasonExample.dailyTransaction(LocalDate.of(2024, 5, 1));
+        assertEquals(4, expected.size());
+    }
+
+    @Test
+    public void testTransactionTakesAStartDateEndDateAndReturnsAllTransactionsForThatDay() throws IOException {
+        List<Transaction> expected = JasonExample.dateTransaction(LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 7));
+        assertEquals(2, expected.size());
+
+    }
+    @Test
+    public void testToGetTheAverageTransactionAmountForSpecifiedPeriod() throws IOException {
+        double expected = JasonExample.averageTransaction(LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 7));
+       assertEquals(5000.0, expected, 0.0);
+
+    }
+
+
 
     @Test
     public void calculateTotalTransactions() throws IOException {

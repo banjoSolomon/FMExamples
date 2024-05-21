@@ -29,6 +29,22 @@
     "amount": 5000.00,
     "type": "DEBIT",
     "date": "2024-05-01"
+  },
+
+  {
+    "id": 5,
+    "name": "Johny Moon",
+    "amount": 5000.00,
+    "type": "DEBIT",
+    "date": "2024-06-02"
+  },
+
+  {
+    "id": 6,
+    "name": "Sam Moon",
+    "amount": 5000.00,
+    "type": "DEBIT",
+    "date": "2024-06-02"
   }
 
 

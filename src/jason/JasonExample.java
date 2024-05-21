@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 
 public class JasonExample {
     public static int calculateTotalTransaction(String jsonFilePath) throws IOException {
@@ -55,6 +58,40 @@ public class JasonExample {
             }
         }
         return count;
+    }
+
+    public static List<Transaction> dailyTransaction(LocalDate date) throws IOException {
+        Path path = Paths.get("C:\\Users\\DELL\\IdeaProjects\\OOP\\src\\jason\\Transaction.json");
+        String fileContent = Files.readString(path);
+        Transaction[] transactions = deserializes(fileContent);
+        return Arrays.stream(transactions).filter((transaction) -> transaction.getDate().isEqual(date)).toList();
+
+
+    }
+
+    public static List<Transaction> dateTransaction(LocalDate startDate, LocalDate endDate) throws IOException {
+        Path path = Paths.get("C:\\Users\\DELL\\IdeaProjects\\OOP\\src\\jason\\Transaction.json");
+        String fileContent = Files.readString(path);
+        Transaction[] transactions = deserializes(fileContent);
+        return Arrays.stream(transactions)
+                .filter(transaction -> transaction.getDate().compareTo(startDate) >= 0
+                        && transaction.getDate().compareTo(endDate) <= 0)
+           .toList();}
+
+    public static double averageTransaction(LocalDate startDate, LocalDate endDate) throws IOException {
+        Path path = Paths.get("C:\\Users\\DELL\\IdeaProjects\\OOP\\src\\jason\\Transaction.json");
+        String fileContent = Files.readString(path);
+        Transaction[] transactions = deserializes(fileContent);
+        return Arrays.stream(transactions)
+                .filter(transaction -> !transaction.getDate().isBefore(startDate)
+                && !transaction.getDate().isAfter(endDate))
+                .mapToDouble(Transaction::getAmount)
+                .average()
+                .orElse(0.0);
+
+
+
+
     }
 }
 
